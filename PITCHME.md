@@ -36,6 +36,6 @@ let evenList = list.filter { $0 % 2 == 0 }
 さらにKotlin
 ```Kotlin
 val array = arrayOf(1,2,3,4,...)
-val evenList = array.filter { it % 2 == 0 }
+val evenList = array.filter { it % 2 == 0 }.toTypedArray()
 ```
 Swiftに近いですね
