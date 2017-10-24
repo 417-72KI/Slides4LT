@@ -78,4 +78,23 @@ List<Integer> newList = list.stream()
 @[3-6](中間操作)
 @[7](終端操作)
 ---
-
+Java8のStreamAPIでは
+- 中間操作のメソッドで返されるオブジェクトは全てStreamクラスのオブジェクト |
+- 終端操作が呼ばれるまで中間操作は実行されない |
+- この時、ループ回数は従来のfor文で書いた時と同じ `list.size()` 回になります |
+- この仕組みを"遅延評価"とか"遅延実行"と言います |
+---
+ではこれを踏まえてSwiftのコードを見てみましょう
+---
+```Swift
+let range = 1...100
+let newList = list.filter { $0 % 2 == 0 }
+                .map { $0 / 2 }
+                .map { $0 * 5 }
+                .filter { $0 > 50 }
+```
+Javaの時と何が違うでしょうか？
+---
+```Swift
+public func map<T>(_ transform: (Element) throws -> T) rethrows -> [T]
+```
