@@ -20,7 +20,7 @@ for(int num: list) {
 List<Integer> list = ...
 List<Integer> evenList = list.stream()
         .filter(num -> num % 2 == 0)
-        .collect(Collectors.asList());
+        .collect(Collectors.toList());
 ```
 ---
 超簡潔！
@@ -58,6 +58,24 @@ for(int num: list) {
 @[4](偶数を抽出して)
 @[5](2で割って)
 @[6](5をかけて)
-@[7-8](50より大きくなった値を新しいリストに追加する)
-
+@[7-9](50より大きくなった値を新しいリストに追加する)
+---
+Java8で書くと
+```Java
+List<Integer> list = ...
+List<Integer> newList = list.stream()
+    .filter(i -> i % 2 == 0)
+    .map(i -> i / 2)
+    .map(i -> i * 5)
+    .filter(i -> i > 50)
+    .collect(Collectors.toList());
+```
+@[3](偶数を抽出して)
+@[4](2で割って)
+@[5](5をかけて)
+@[6](50より大きくなった値で)
+@[7](リストを生成する)
+@[3-6](中間操作)
+@[7](終端操作)
+---
 
