@@ -95,6 +95,69 @@ let newList = list.filter { $0 % 2 == 0 }
 ```
 Javaの時と何が違うでしょうか？
 ---
+Array.mapの定義
 ```Swift
 public func map<T>(_ transform: (Element) throws -> T) rethrows -> [T]
+```
+@[1](配列を返してる)
+---
+
+```Swift
+func divide(_ i: Int) -> (Int) -> Int {
+    return {
+        print($0, "/" , i, "=", $0 / i)
+        return $0 / i
+    }
+}
+func multiply(_ i: Int) -> (Int) -> Int {
+    return {
+        print($0, "*" , i, "=", $0 * i)
+        return $0 * i
+    }
+}
+func isOdd() -> (Int) -> Bool {
+    return {
+        print($0, "odd?" , $0 % 2 == 0)
+        return $0 % 2 == 0
+    }
+}
+func isMoreThan(_ i: Int) -> (Int) -> Bool {
+    return {
+        print($0, ">", i, ":", $0 > i)
+        return $0 > i
+    }
+}
+var list = 1...10
+let newList = list.filter(isOdd())
+    .map(divide(2))
+    .map(multiply(5))
+    .filter(isMoreThan(10))
+```
+---
+```
+1 odd? false
+2 odd? true
+3 odd? false
+4 odd? true
+5 odd? false
+6 odd? true
+7 odd? false
+8 odd? true
+9 odd? false
+10 odd? true
+2 / 2 = 1
+4 / 2 = 2
+6 / 2 = 3
+8 / 2 = 4
+10 / 2 = 5
+1 * 5 = 5
+2 * 5 = 10
+3 * 5 = 15
+4 * 5 = 20
+5 * 5 = 25
+5 > 10 : false
+10 > 10 : false
+15 > 10 : true
+20 > 10 : true
+25 > 10 : true
 ```
