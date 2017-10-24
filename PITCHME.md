@@ -43,5 +43,21 @@ Swiftに近いですね
 もうちょっと複雑な例
 ---
 ```Java
-
+List<Integer> list = ...
+List<Integer> newList = new ArrayList<>();
+for(int num: list) {
+    if (num % 2 == 0) {
+        int num2 = num / 2;
+        int num3 = num2 * 5;
+        if (num3 > 50) {
+            newList.add(num3);
+        }
+    }
+}
 ```
+@[4](偶数を抽出して)
+@[5](2で割って)
+@[6](5をかけて)
+@[7-8](50より大きくなった値を新しいリストに追加する)
+
+
