@@ -101,7 +101,7 @@ public func map<T>(_ transform: (Element) throws -> T) rethrows -> [T]
 ```
 @[1](配列を返してる)
 ---
-
+分かりやすいように画面出力してみましょう
 ```Swift
 func divide(_ i: Int) -> (Int) -> Int {
     return {
@@ -134,6 +134,7 @@ let newList = list.filter(isOdd())
     .filter(isMoreThan(10))
 ```
 ---
+実行結果
 ```
 1 odd? false
 2 odd? true
@@ -161,3 +162,7 @@ let newList = list.filter(isOdd())
 20 > 10 : true
 25 > 10 : true
 ```
+@[1-10](filter(isOdd()))
+@[11-15](map(divide(2)))
+@[16-20](map(multiply(5)))
+@[21-25](filter(isMoreThan(10)))
