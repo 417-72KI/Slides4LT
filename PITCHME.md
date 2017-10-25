@@ -95,11 +95,12 @@ let newList = list.filter { $0 % 2 == 0 }
 Javaの時と何が違うでしょうか？
 @[5](終端操作が無い...？)
 ---
-Array.mapの定義
+`map` と `filter` の定義
 ```Swift
 public func map<T>(_ transform: (Element) throws -> T) rethrows -> [T]
+public func filter(_ isIncluded: (Element) throws -> Bool) rethrows -> [Element]
 ```
-@[1](配列を返してる)
+@[1-2](配列を返してる...だと...？)
 ---
 分かりやすいように画面出力してみましょう
 ```Swift
