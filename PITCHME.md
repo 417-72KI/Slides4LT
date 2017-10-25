@@ -103,16 +103,16 @@ public func map<T>(_ transform: (Element) throws -> T) rethrows -> [T]
 ---
 分かりやすいように画面出力してみましょう
 ```Swift
-func divide(_ i: Int) -> (Int) -> Int {
-    return {
-        print($0, "/" , i, "=", $0 / i)
-        return $0 / i
-    }
-}
 func multiply(_ i: Int) -> (Int) -> Int {
     return {
         print($0, "*" , i, "=", $0 * i)
         return $0 * i
+    }
+}
+func divide(_ i: Int) -> (Int) -> Int {
+    return {
+        print($0, "/" , i, "=", $0 / i)
+        return $0 / i
     }
 }
 func isOdd() -> (Int) -> Bool {
@@ -133,10 +133,14 @@ let newList = list.filter(isOdd())
     .map(multiply(5))
     .filter(isMoreThan(10))
 ```
-@[1](偶数を抽出して)
-@[2](2で割って)
-@[3](5をかけて)
-@[4](50より大きくなった値を抽出)
+@[1-6](かけ算)
+@[7-12](割り算)
+@[13-18](偶数か判定)
+@[19-24](iより大きいか判定)
+@[26](偶数を抽出して)
+@[27](2で割って)
+@[28](5をかけて)
+@[29](50より大きくなった値を抽出)
 ---
 実行結果
 ```
