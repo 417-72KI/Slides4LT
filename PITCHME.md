@@ -85,7 +85,6 @@ Java8のStreamAPIでは
 - この仕組みを"遅延評価"とか"遅延実行"と言います |
 ---
 ではこれを踏まえてSwiftのコードを見てみましょう
----
 ```Swift
 let range = 1...100
 let newList = list.filter { $0 % 2 == 0 }
@@ -94,6 +93,7 @@ let newList = list.filter { $0 % 2 == 0 }
                 .filter { $0 > 50 }
 ```
 Javaの時と何が違うでしょうか？
+@[5](終端操作が無い...？)
 ---
 Array.mapの定義
 ```Swift
