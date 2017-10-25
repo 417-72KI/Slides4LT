@@ -133,6 +133,10 @@ let newList = list.filter(isOdd())
     .map(multiply(5))
     .filter(isMoreThan(10))
 ```
+@[1](偶数を抽出して)
+@[2](2で割って)
+@[3](5をかけて)
+@[4](50より大きくなった値を抽出)
 ---
 実行結果
 ```
