@@ -213,7 +213,7 @@ let newList = list.lazy
     .map(divide(2))
     .map(multiply(5))
     .filter(isMoreThan(10))
-    .reduce(into: \[Int\]()) { (array: inout \[Int\], i: Int) in array.append(i) }
+    .reduce(into: \[Int]()) { (array: inout [Int], i: Int) in array.append(i) }
 ```
 ---
 実行結果
