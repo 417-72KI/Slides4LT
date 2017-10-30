@@ -193,3 +193,21 @@ Swift → LazyCollection
 
 Kotlin → Sequence
 ---
+```
+var list = 1...10
+let newList = list.filter(isOdd())
+    .map(divide(2))
+    .map(multiply(5))
+    .filter(isMoreThan(10))
+```
+これを
+---
+```
+var list = 1...10
+let newList = list.lazy
+    .filter(isOdd())
+    .map(divide(2))
+    .map(multiply(5))
+    .filter(isMoreThan(10))
+```
+こうじゃ
