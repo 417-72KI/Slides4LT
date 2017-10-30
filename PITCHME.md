@@ -49,7 +49,7 @@ for(int num: list) {
     if (num % 2 == 0) {
         int num2 = num / 2;
         int num3 = num2 * 5;
-        if (num3 > 50) {
+        if (num3 > 10) {
             newList.add(num3);
         }
     }
@@ -58,7 +58,7 @@ for(int num: list) {
 @[4](偶数を抽出して)
 @[5](2で割って)
 @[6](5をかけて)
-@[7-9](50より大きくなった値を新しいリストに追加する)
+@[7-9](10より大きくなった値を新しいリストに追加する)
 ---
 Java8で書くと
 ```Java
@@ -67,13 +67,13 @@ List<Integer> newList = list.stream()
     .filter(i -> i % 2 == 0)
     .map(i -> i / 2)
     .map(i -> i * 5)
-    .filter(i -> i > 50)
+    .filter(i -> i > 10)
     .collect(Collectors.toList());
 ```
 @[3](偶数を抽出して)
 @[4](2で割って)
 @[5](5をかけて)
-@[6](50より大きくなった値で)
+@[6](10より大きくなった値で)
 @[7](リストを生成する)
 @[3-6](中間操作)
 @[7](終端操作)
@@ -86,11 +86,11 @@ Java8のStreamAPIでは
 ---
 ではこれを踏まえてSwiftのコードを見てみましょう
 ```Swift
-let range = 1...100
+let range = 1...10
 let newList = list.filter { $0 % 2 == 0 }
                 .map { $0 / 2 }
                 .map { $0 * 5 }
-                .filter { $0 > 50 }
+                .filter { $0 > 10 }
 ```
 Javaの時と何が違うでしょうか？
 @[5](終端操作が無い...？)
@@ -141,7 +141,7 @@ let newList = list.filter(isOdd())
 @[26](偶数を抽出して)
 @[27](2で割って)
 @[28](5をかけて)
-@[29](50より大きくなった値を抽出)
+@[29](10より大きくなった値を抽出)
 ---
 実行結果
 ```
@@ -171,7 +171,11 @@ let newList = list.filter(isOdd())
 20 > 10 : true
 25 > 10 : true
 ```
-@[1-10](filter(isOdd()))
-@[11-15](map(divide(2)))
-@[16-20](map(multiply(5)))
-@[21-25](filter(isMoreThan(10)))
+@[1-10](filter(isOdd()): 10回)
+@[11-15](map(divide(2)): 5回)
+@[16-20](map(multiply(5)): 5回)
+@[21-25](filter(isMoreThan(10)): 5回)
+---
+25回もループ回してんじゃん！( ﾟдﾟ)Σ
+※ここでは省略しますがKotlinのArray.filterやList.map等も同じような挙動になります
+---
