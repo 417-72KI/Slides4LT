@@ -177,5 +177,6 @@ let newList = list.filter(isOdd())
 @[21-25](filter(isMoreThan(10)): 5回)
 ---
 25回もループ回してんじゃん！( ﾟдﾟ)Σ
+
 ※ここでは省略しますがKotlinのArray.filterやList.map等も同じような挙動になります
 ---
