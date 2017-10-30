@@ -206,7 +206,7 @@ let newList = list.filter(isOdd())
 これを
 ---
 こうじゃ
-```
+```Swift
 var list = 1...10
 let newList = list.lazy
     .filter(isOdd())
