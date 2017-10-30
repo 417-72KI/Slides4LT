@@ -24,6 +24,7 @@ List<Integer> evenList = list.stream()
 ```
 ---
 超簡潔！
+
 分かりやすい！
 ---
 これがSwiftだと
@@ -185,4 +186,10 @@ let newList = list.filter(isOdd())
 ((((；ﾟДﾟ))))
 
 [参考](https://qiita.com/RyotaMurohoshi/items/94c60704b21863eb8dd5)
+---
+そこで
+---
+Swift → LazyCollection
+
+Kotlin → Sequence
 ---
