@@ -180,3 +180,7 @@ let newList = list.filter(isOdd())
 
 ※ここでは省略しますがKotlinのArray.filterやList.map等も同じような挙動になります
 ---
+これが要素数100万とかの配列になったら...((((；ﾟДﾟ))))
+
+[参考](https://qiita.com/RyotaMurohoshi/items/94c60704b21863eb8dd5)
+---
