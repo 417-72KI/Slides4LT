@@ -1,4 +1,4 @@
-### Collection操作の罠
+### ModernなCollection操作の罠
 Swift & Kotlin 編
 ---
 突然ですが
@@ -40,6 +40,8 @@ val array = arrayOf(1,2,3,4,...)
 val evenList = array.filter { it % 2 == 0 }.toTypedArray()
 ```
 Swiftに近いですね
+---
+最近はfilterとかmapとか使って関数型っぽくコレクション操作するのが主流
 ---
 もうちょっと複雑な例
 ---
