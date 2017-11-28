@@ -1,57 +1,31 @@
-### PITCHMEチートシート
+### Kotlin の スコープ関数が素晴らしい件について
 
 ---
-\-\-\-でページ切り替え(横)
-\+\+\+でページ切り替え(縦)
+
+こういうことで悩んだ経験ありませんか？
+
 ---
-### 画像
-&lt;img src="assets/img/map.jpg"&gt;
-+++
-<img src="assets/img/map.jpg">
----
-### 箇条書き
-- 通常のMarkdownと同じ
-- 但し |
-- 末尾に \| を付けると |
-- 1行ずつアニメーションに |
----
-### コードブロック
-```Swift
-print("@[1]でここがハイライト")
-print("@[2-4]でここから")
-print()
-print("ここまでハイライトされる")
-print("@[]の右にハイライト行の解説を書ける")
+
+```Java
+class Hoge {
+    // ※面倒なのでカプセル化は省略してます
+    public int a;
+    public int b;
+}
+
+Hoge h1 = new Hoge();
+h1.a = 1;
+h1.b = 2;
+Hoge h2 = new Hoge();
+h1.a = 3;
+h1.b = 4;
 ```
-@[1](こんな)
-@[2-4](感じ)
+@[1-5](クラス定義)
+@[7-9](1個目のオブジェクトを生成して値を設定)
+@[10-12](2個目のオブジェクトを生成して値を...)
+@[11-12](...ん？)
+
 ---
-### 設定ファイル
-PITCHME.yamlで設定
-+++
-### theme
-- black
-- moon
-- night
-- beige
-- sky
-- white
-+++
-### transition
-- convex
-- concave
-- default
-- fade
-- none
-- slide
-- zoom
-+++
-### slide-number
-- trueで右下に出る
-+++
-### footnote
-- 何か書くと左下に出る
-+++
-### autoslide
-- 単位: ms
-- 設定すると自動でスライドが流れるようになる
+
+違うオブジェクトに
+
