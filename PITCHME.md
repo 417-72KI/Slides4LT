@@ -67,10 +67,26 @@ h1.b = 4;
 let
 
 ```Kotlin
-@kotlin.internal.InlineOnly
 public inline fun <T, R> T.let(block: (T) -> R): R = block(this)
 ```
 
+with
 
+```Kotlin
+public inline fun <T, R> with(receiver: T, block: T.() -> R): R = receiver.block()
+```
 
+---
+
+apply
+
+```Kotlin
+public inline fun <T> T.apply(block: T.() -> Unit): T { block(); return this }
+```
+
+run
+
+```Kotlin
+public inline fun <T, R> T.run(block: T.() -> R): R = block()
+```
 
