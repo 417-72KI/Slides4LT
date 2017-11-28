@@ -56,11 +56,11 @@ h1.b = 4;
 
 ### スコープ関数とは
 - `Kotlin` の標準ライブラリにある5つの関数
- - let
- - with
- - run
- - apply
- - also
+    - let
+    - with
+    - run
+    - apply
+    - also
 
 ---
 
