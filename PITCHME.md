@@ -64,7 +64,12 @@ h1.b = 4;
 
 ---
 
+let
 
+```Kotlin
+@kotlin.internal.InlineOnly
+public inline fun <T, R> T.let(block: (T) -> R): R = block(this)
+```
 
 
 
