@@ -121,7 +121,7 @@ public inline fun <T> T.also(block: (T) -> Unit): T { block(this); return this }
 
 例えばさっきのこれ
 
-```
+```Java
 class Hoge {
     public int a;
     public int b;
@@ -139,7 +139,7 @@ h1.b = 4;
 
 正しくはこう
 
-```
+```Java
 class Hoge {
     public int a;
     public int b;
@@ -151,4 +151,26 @@ h1.b = 2;
 Hoge h2 = new Hoge();
 h2.a = 3;
 h2.b = 4;
+```
+
+これが|
+
+---
+
+こうじゃ
+
+```Kotlin
+class Hoge {
+    var a: Int = 0;
+    var b: Int = 0;
+}
+
+val h1 = Hoge().apply {
+    a = 1
+    b = 2
+}
+val h2 = Hoge().apply {
+    a = 3;
+    b = 4;
+}
 ```
