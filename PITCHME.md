@@ -169,8 +169,8 @@ val h1 = Hoge().apply {
     a = 1
     b = 2
 }
-val h2 = Hoge().apply {
-    a = 3;
-    b = 4;
+val h2 = Hoge().also {
+    it.a = 3
+    it.b = 4
 }
 ```
