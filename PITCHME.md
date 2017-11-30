@@ -90,3 +90,14 @@ run
 public inline fun <T, R> T.run(block: T.() -> R): R = block()
 ```
 
+---
+
+also
+
+```Kotlin
+public inline fun <T> T.also(block: (T) -> Unit): T { block(this); return this }
+```
+
+---
+
+どうやって使うの？
