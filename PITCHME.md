@@ -116,3 +116,39 @@ public inline fun <T> T.also(block: (T) -> Unit): T { block(this); return this }
 ---
 
 どうやって使うの？
+
+---
+
+例えばさっきのこれ
+
+```
+class Hoge {
+    public int a;
+    public int b;
+}
+
+Hoge h1 = new Hoge();
+h1.a = 1;
+h1.b = 2;
+Hoge h2 = new Hoge();
+h1.a = 3;
+h1.b = 4;
+```
+
+---
+
+正しくはこう
+
+```
+class Hoge {
+    public int a;
+    public int b;
+}
+
+Hoge h1 = new Hoge();
+h1.a = 1;
+h1.b = 2;
+Hoge h2 = new Hoge();
+h2.a = 3;
+h2.b = 4;
+```
