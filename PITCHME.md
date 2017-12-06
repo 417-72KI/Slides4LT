@@ -153,7 +153,25 @@ h2.a = 3;
 h2.b = 4;
 ```
 
-これが
+---
+
+これをKotlinで書くと
+
+```Kotlin
+class Hoge {
+    var a: Int = 0;
+    var b: Int = 0;
+}
+
+val h1 = Hoge()
+h1.a = 1
+h1.b = 2
+val h2 = Hoge()
+h2.a = 3
+h2.b = 4
+```
+
+これを
 
 ---
 
