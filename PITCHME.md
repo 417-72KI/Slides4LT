@@ -273,8 +273,10 @@ Kotlinの言語仕様をそこそこ深く理解する必要がある  
 
 ---
 
-各関数で出来ることは同じですが、当然その使い道・役回りは違います。  
-(今回は時間無くなりそうなので省略しますが、[ここ](https://speakerdeck.com/ntaro/detakurasufalsehua-sukopuguan-shu-falsehua-number-rkt)とか参考にするといいかも)
+各関数で出来ることは同じですが、  
+当然その使い道・役回りは違います。  
+(今回は時間無くなりそうなので省略しますが、  
+[ここ](https://speakerdeck.com/ntaro/detakurasufalsehua-sukopuguan-shu-falsehua-number-rkt)とか参考にするといいかも)
 
 ---
 
