@@ -159,8 +159,8 @@ h2.b = 4;
 
 ```Kotlin
 class Hoge {
-    var a: Int = 0;
-    var b: Int = 0;
+    var a: Int = 0
+    var b: Int = 0
 }
 
 val h1 = Hoge()
@@ -179,8 +179,8 @@ h2.b = 4
 
 ```Kotlin
 class Hoge {
-    var a: Int = 0;
-    var b: Int = 0;
+    var a: Int = 0
+    var b: Int = 0
 }
 
 val h1 = Hoge().apply {
@@ -194,3 +194,49 @@ val h2 = Hoge().also {
 ```
 @[6-9](初期化されたオブジェクト自体がレシーバになる)
 @[10-13](初期化されたオブジェクトが引数として渡される(渡されたオブジェクトは `it` で呼べる))
+
+---
+
+更に
+
+```Kotlin
+val h1 = Hoge().apply {
+    a = 1
+    b = 2
+}
+doSomethingWith(h1)
+```
+
+これが
+
+---
+
+こうじゃ
+
+```Kotlin
+Hoge().apply {
+    a = 1
+    b = 2
+}.let {
+    doSomethingWith(h1)
+}
+```
+@[1-6](生成されたオブジェクトが変数に格納されないのでこの後使われることを想定しなくて良い)
+@[1](オブジェクトを生成して)
+@[2-3](プロパティ設定して)
+@[4-6](ここで使う！)
+
+---
+
+つまり
+
+---
+
+オブジェクトに対して使用するスコープを限定できる！
+
+---
+
+だから  
+「スコープ」関数
+
+---
