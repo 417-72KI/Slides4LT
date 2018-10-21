@@ -4,10 +4,35 @@ TODO: 自己紹介
 ---
 本題
 ---
-Objective-CからSwift
-JavaからKotlin(またはJava8)
+Objective-CからSwift  
+JavaからKotlin(またはJava8)  
 になるに従ってコレクション操作が大幅に楽になりました
 ---
+昔
+
+Objective-C
+```ObjC
+NSArray *array = ...
+NSArray *evenArray = [NSMutableArray new];
+for (NSNumber *num in array) {
+    if(num.integerValue % 2 == 0) {
+        [evenArray addObject:num];
+    }
+}
+```
+Java(~7)
+```Java
+List<Integer> list = ...
+List<Integer> evenList = new ArrayList<>();
+for(int num: list) {
+    if(num % 2 == 0) {
+        evenList.add(num);
+    }
+}
+```
+---
+今
+
 Swift
 ```Swift
 let list = [1,2,3,4,...]
