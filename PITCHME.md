@@ -4,18 +4,20 @@ TODO: 自己紹介
 ---
 本題
 ---
+Objective-CからSwift
+JavaからKotlin(またはJava8)
+になるに従ってコレクション操作が大幅に楽になりました
+---
 Swift
 ```Swift
 let list = [1,2,3,4,...]
 let evenList = list.filter { $0 % 2 == 0 }
 ```
-@[2](偶数を抽出する)
 Kotlin
 ```Kotlin
 val array = arrayOf(1,2,3,4,...)
 val evenList = array.filter { it % 2 == 0 }.toTypedArray()
 ```
-@[2](偶数を抽出する)
 ---
 ちょっと複雑な例
 ---
