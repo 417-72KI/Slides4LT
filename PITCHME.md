@@ -139,15 +139,33 @@ let newList = list.filter(isOdd())
 @[16-20](map(multiply(5)): 5回)
 @[21-25](filter(isMoreThan(10)): 5回)
 ---
-25回もループ回してんじゃん！( ﾟдﾟ)Σ
+イメージ
+```Java
+List<Integer> l = new ArrayList<>();
+for (int n: array) {
+    if (isOdd(n)) l.add(n); 
+}
+List<Integer> l2 = new ArrayList<>();
+for (int n: l) {
+    l2.add(divide(n, 2)); 
+}
+List<Integer> l3 = new ArrayList<>();
+for (int n: l2) {
+    l3.add(multiply(n, 5));
+}
+List<Integer> result = new ArrayList<>();
+for (int n: l3) {
+    if (isMoreThan(n, 10)) result.add(n); 
+}
+```
+---
+ループ回しすぎぃ！
 
 ※ここでは省略しますがKotlinのArray.filterやList.map等も同じような挙動になります
 ---
 これが要素数100万とかの配列になったら...
 
 ((((；ﾟДﾟ))))
-
-[参考](https://qiita.com/RyotaMurohoshi/items/94c60704b21863eb8dd5)
 ---
 そこで
 ---
@@ -206,6 +224,17 @@ let newList = list.lazy
 5 * 5 = 25
 25 > 10 : true
 ```
+---
+イメージ
+```Java
+List<Integer> result = new ArrayList<>();
+for (int n: array) {
+    if (!isOdd(n)) continue;
+    int n2 = divide(n, 2);
+    int n3 = multiply(n2, 5)
+    if (isMoreThan(n3, 10)) result.add(n3);
+}
+```
 forループでcontinueとかやってる時と同じような感じになる!
 ---
 ちなみにKotlinの場合は
@@ -215,9 +244,6 @@ forループでcontinueとかやってる時と同じような感じになる!
 - 大きいデータから複数の条件に合致する数件だけを抽出する
 - 逆に1つの条件で合致するデータの配列を作るなどの単純なものであれば今まで通りでも十分
 ---
-最後に
-- コレクション操作の関数・メソッドを使う際は複雑になるようなら遅延評価の検討を
-- SwiftのLazyCollectionは型推論と相性が悪い(
+まとめ
+- コレクション操作の関数・メソッドを使う際は複雑になるようなら遅延評価の検討を！
 ---
-参考
-- https://qiita.com/masakihori/items/f73e05907c302ece5d23
