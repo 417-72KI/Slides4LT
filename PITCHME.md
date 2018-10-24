@@ -147,10 +147,13 @@ let newList = list.filter(isOdd())
 ```Java
 List<Integer> l = new ArrayList<>();
 for (int n: array) if (isOdd(n)) l.add(n); 
+
 List<Integer> l2 = new ArrayList<>();
 for (int n: l) l2.add(divide(n, 2)); 
+
 List<Integer> l3 = new ArrayList<>();
 for (int n: l2) l3.add(multiply(n, 5));
+
 List<Integer> result = new ArrayList<>();
 for (int n: l3) if (isMoreThan(n, 10)) result.add(n);
 ```
