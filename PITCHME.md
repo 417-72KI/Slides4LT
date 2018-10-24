@@ -52,7 +52,7 @@ val evenList = array.filter { it % 2 == 0 }.toTypedArray()
 ---
 ```Swift
 let range = 1...10
-let newList = list.filter { $0 % 2 == 0 }
+let newList = range.filter { $0 % 2 == 0 }
                 .map { $0 / 2 }
                 .map { $0 * 5 }
                 .filter { $0 > 10 }
@@ -164,8 +164,6 @@ for (int n: l3) {
 ```
 ---
 ループ回しすぎぃ！
-
-※ここでは省略しますがKotlinのArray.filterやList.map等も同じような挙動になります
 ---
 これが要素数100万とかの配列になったら...
 ---
