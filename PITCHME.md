@@ -1,6 +1,9 @@
 ### Collection操作の罠
 ---
-TODO: 自己紹介
+Profile
+- iOS Enginner@iRidge inc.
+- Twitter/Qiita: @417_72ki
+- GitHub: 417-72KI
 ---
 本題
 ---
@@ -164,15 +167,14 @@ for (int n: l3) {
 ※ここでは省略しますがKotlinのArray.filterやList.map等も同じような挙動になります
 ---
 これが要素数100万とかの配列になったら...
-
+---
 ((((；ﾟДﾟ))))
 ---
 そこで
 ---
-Swift → LazyCollection
-
+Swift → LazyCollection  
 Kotlin → Sequence
-
+---
 どちらも遅延評価で実行してくれる
 ---
 さっきの例
