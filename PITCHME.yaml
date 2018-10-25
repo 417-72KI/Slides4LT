@@ -1,3 +1,4 @@
 transition: fade
 slide-number: true
 theme: sky
+theme-override : assets/css/PITCHME.css
