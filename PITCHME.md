@@ -1,6 +1,7 @@
 ### Collection操作の罠
 ---
 Profile
+- Takuhiro Muta
 - iOS Enginner@iRidge inc.
 - Twitter/Qiita: @417_72ki
 - GitHub: 417-72KI
