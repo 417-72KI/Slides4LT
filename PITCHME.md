@@ -246,7 +246,8 @@ for (int n: array) {
 Before
 ```Swift
 let range = 1...1000
-let result1 = range.filter(isOdd())
+let result1 = range
+    .filter(isOdd())
     .map(divide(2))
     .map(multiply(5))
     .filter(isMoreThan(10))
