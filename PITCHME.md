@@ -240,16 +240,13 @@ for (int n: array) {
 ちなみにKotlinの場合は
 - `array.asSequence()` をmapとかfilterとかの前に呼ぶだけ
 ---
-実行時間(1...100)
-- lazy導入前 -> 198ms
-- lazy導入後 -> 68ms
----
 どういう時に有効？
 - 大きいデータから複数の条件に合致する数件だけを抽出する
 ---
 Before
 ```Swift
-let result1 = list.filter(isOdd())
+let range = 1...1000
+let result1 = range.filter(isOdd())
     .map(divide(2))
     .map(multiply(5))
     .filter(isMoreThan(10))
@@ -259,7 +256,8 @@ let result1 = list.filter(isOdd())
 ---
 After
 ```Swift
-let result2 = list.lazy
+let range = 1...1000
+let result2 = range.lazy
     .filter(isOdd())
     .map(divide(2))
     .map(multiply(5))
