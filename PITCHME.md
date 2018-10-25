@@ -68,8 +68,8 @@ let newList = range.filter { $0 % 2 == 0 }
 public func map<T>(_ transform: (Element) throws -> T) rethrows -> [T]
 public func filter(_ isIncluded: (Element) throws -> Bool) rethrows -> [Element]
 ```
-@[1](ElementをTに変換した配列を返す)
-@[2](条件に合致したElementのみを抽出した配列を返す)
+@[1](`Element`を`T`に変換した配列を返す)
+@[2](条件に合致した`Element`のみを抽出した配列を返す)
 ---
 どちらも常に配列を返している :thinking:
 ---
