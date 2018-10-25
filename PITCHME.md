@@ -71,7 +71,7 @@ public func filter(_ isIncluded: (Element) throws -> Bool) rethrows -> [Element]
 @[1](`Element`を`T`に変換した配列を返す)
 @[2](条件に合致した`Element`のみを抽出した配列を返す)
 ---
-どちらも常に配列を返している :thinking:
+どちらも配列を返している...
 ---
 分かりやすいように画面出力してみましょう
 ```Swift
