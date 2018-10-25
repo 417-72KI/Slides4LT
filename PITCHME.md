@@ -240,14 +240,34 @@ for (int n: array) {
 ちなみにKotlinの場合は
 - `array.asSequence()` をmapとかfilterとかの前に呼ぶだけ
 ---
-実行時間
-- lazy導入前 -> 15〜17msec
-- lazy導入後 -> 1msec
+実行時間(1...100)
+- lazy導入前 -> 198ms
+- lazy導入後 -> 68ms
 ---
 どういう時に有効？
 - 大きいデータから複数の条件に合致する数件だけを抽出する
-- 逆に1つの条件で合致するデータの配列を作るなどの単純なものであれば今まで通りでも十分
+---
+Before
+```Swift
+let result1 = list.filter(isOdd())
+    .map(divide(2))
+    .map(multiply(5))
+    .filter(isMoreThan(10))
+    .prefix(5)
+```
+実行時間: 0.7900744676589966
+---
+After
+```Swift
+let result2 = list.lazy
+    .filter(isOdd())
+    .map(divide(2))
+    .map(multiply(5))
+    .filter(isMoreThan(10))
+    .prefix(5)
+    .reduce(into: [Int] ()) { (array: inout [Int], i: Int) in array.append(i) }
+```
+実行時間: 0.00704646110534668
 ---
 まとめ
-- コレクション操作の関数・メソッドを使う際は複雑になるようなら遅延評価の検討を！
----
+- 膨大なコレクションを操作する際は遅延評価の検討を！
